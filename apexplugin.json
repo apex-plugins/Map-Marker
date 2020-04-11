@@ -1,0 +1,44 @@
+{
+	"name": "0integration Map Marker",
+	"version": "1.0",
+	"description": "Google map address picker and autocomplete for address item plugin used to easily select address.",
+	"keywords": ["map", "mapmarker","mapmarkercluster", "address", "googlemap", "markercluster"],
+	"homepage": "https://github.com/apex-plugins/Map-Marker",
+	"bugs": {
+		"url": "https://github.com/apex-plugins/Map-Marker/issues",
+		"email": "kartik.patel@zerointegration.com"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Kartik Patel",
+		"email": "kartik.patel@zerointegration.com",
+		"url": "https://zerointegration.com/",
+		"twitter": "kp9985",
+		"donationUrl": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/apex-plugins/Map-Marker.git"
+	},
+	"oracle": {
+		"versions": [
+			"11.2.0.1",
+			"12.1.0.1",
+			"12.2.0.1"
+		],
+		"apex": {
+			"versions": [
+				"18.1.0",
+				"18.2.0",
+				"19.1.0",
+				"19.2.0"
+			],
+			"plugin": {
+				"internalName": "COM.ZEROINTEGRATION.ADDRESSPICKER",
+				"type": "region",
+				"demo": "https://apps.zerointegration.com/demo/f?p=apexplugins:mapmarker",
+				"previewImage": "https://github.com/apex-plugins/Map-Marker/master/Source/Preview.png"
+			}
+		}
+	}
+}
