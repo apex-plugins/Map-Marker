@@ -22,6 +22,7 @@ This plugin allows you to display address marker on google map using marker clus
 2. Install the plugin to your application - **region_type_plugin_com_zerointegration_mapmarker.sql**
 3. Supply your **Google API Key** (Component Settings)
 4. Add a region to the page and use below SQL Query format to get data.
-   SELECT LATITUDE, LONGITUDE, ADDRESS FROM TABLE
+
+SELECT LATITUDE, LONGITUDE, ADDRESS FROM TABLE
 
 For more info, refer to the [WIKI](https://github.com/apex-plugins/Map-Marker/wiki).
