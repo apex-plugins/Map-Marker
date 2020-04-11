@@ -1,27 +1,27 @@
 # Map-Marker
 
-Google map address picker and autocomplete for address item plugin used to easily select address.
+Google map marker cluster region plugin used to display location marker cluster on google map..
 
-**A Item plugin for Oracle Application Express**
+**A Region plugin for Oracle Application Express**
 
-This plugin allows you to select address or search address using autocomplete functionality from Google Map. 
+This plugin allows you to display address marker on google map using marker cluster. 
 
-![Preview.gif](https://raw.githubusercontent.com/apex-plugins/Address-Picker/master/Source/Preview.gif)
+![Preview.png](https://raw.githubusercontent.com/apex-plugins/Map-Marker/master/Source/Preview.png)
 
 ## DEMO ##
 
-[https://apps.zerointegration.com/demo/f?p=apexplugins:addresspicker](https://apps.zerointegration.com/demo/f?p=apexplugins:addresspicker)
+[https://apps.zerointegration.com/demo/f?p=apexplugins:mapmarker](https://apps.zerointegration.com/demo/f?p=apexplugins:mapmarker)
 
 ## PRE-REQUISITES ##
 
 * You need a [Google Maps API Key](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)
-* Make sure no template selected for item appearance 
 
 ## INSTALLATION ##
 
 1. Download the [latest release](https://github.com/apex-plugins/Map-Marker/releases/latest)
-2. Install the plugin to your application - **item_type_plugin_com_zerointegration_addresspicker.sql**
+2. Install the plugin to your application - **region_type_plugin_com_zerointegration_mapmarker.sql**
 3. Supply your **Google API Key** (Component Settings)
-4. Add a item to the page region and specify parameters in settings.
+4. Add a region to the page and use below SQL Query format to get data.
+   SELECT LATITUDE, LONGITUDE, ADDRESS FROM TABLE
 
-For more info, refer to the [WIKI](https://github.com/apex-plugins/Address-Picker/wiki).
+For more info, refer to the [WIKI](https://github.com/apex-plugins/Map-Marker/wiki).
