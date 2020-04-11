@@ -1,6 +1,6 @@
 # Map-Marker
 
-Google map marker cluster region plugin used to display location marker cluster on google map..
+Google map marker cluster region plugin used to display location marker cluster on google map.
 
 **A Region plugin for Oracle Application Express**
 
