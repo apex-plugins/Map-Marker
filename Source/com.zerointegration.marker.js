@@ -31,7 +31,7 @@ function refreshMap() {
   var markers = [];
   var markerImage = new google.maps.MarkerImage(imageUrl,new google.maps.Size(24, 32));
   var markers=new Array();
-  var gData=JSON.parse($("div.map-data").html());
+  var gData=JSON.parse($("div.map-data-"+regionId).html());
   
   if (gData.loc.length>0)
   {
@@ -41,7 +41,7 @@ function refreshMap() {
   }
   else
   {
-  	alert($("div.no-data-found").html());
+  	alert($("div.no-data-found-"+regionId).html());
   }
   
   // Create the markers ad infowindows.
@@ -102,7 +102,7 @@ function refreshMap() {
 }    
 
 function initialize() {
-  map = new google.maps.Map(document.getElementById('map-canvas'), {
+  map = new google.maps.Map(document.getElementById('map-canvas-'+regionId), {
     zoom: 12,
     center: new google.maps.LatLng(0,0),
     mapTypeId: google.maps.MapTypeId.ROADMAP

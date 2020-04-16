@@ -15,8 +15,8 @@ http://www.opensource.org/licenses/gpl-3.0.html
  * @author Kartik Patel - kartik.patel@zerointegration.com
  */
  
-FUNCTION render_mapmarker
-    (p_region IN APEX_PLUGIN.t_region
+FUNCTION RENDER_MAPMARKER 
+   (p_region IN APEX_PLUGIN.t_region
     ,p_plugin IN APEX_PLUGIN.t_plugin
     ,p_is_printer_friendly IN BOOLEAN
     ) RETURN APEX_PLUGIN.t_region_render_result IS
@@ -38,6 +38,7 @@ FUNCTION render_mapmarker
     l_lng    NUMBER;
     l_info   varchar2(500);
     V_LOC_DATA CLOB;
+    l_script varchar2(500);
     
 BEGIN
     -- Debug information (if app is being run in debug mode)
@@ -68,7 +69,7 @@ BEGIN
     l_region := CASE WHEN p_region.static_id IS NOT NULL
                           THEN p_region.static_id
                           ELSE 'R'||p_region.id END;
-
+                          
     /*sys.htp.p('V_MAP_WIDTH='||V_MAP_WIDTH);
     sys.htp.p('V_MAP_HEIGHT='||V_MAP_HEIGHT);
     sys.htp.p('V_DYNAMIC_WIDTH='||V_DYNAMIC_WIDTH);
@@ -104,14 +105,17 @@ BEGIN
     APEX_JSON.close_object;
     V_LOC_DATA := APEX_JSON.get_clob_output;
     APEX_JSON.free_output;
-   
-    sys.htp.p('<div id="map-canvas" style="width:'
+    
+    l_script := '<script>var regionId = '''||l_region||''';</script>';
+    sys.htp.p(l_script);
+    sys.htp.p('<div id="map-canvas-'||l_region||'" style="width:'
                        || CASE WHEN V_DYNAMIC_WIDTH='Y' THEN '100%;' ELSE V_MAP_WIDTH|| 'px;' END ||' height:'
                        || V_MAP_HEIGHT
                        || 'px;"> </div>');
                        
-    sys.htp.p('<div class="map-data" style="display: none;">'||V_LOC_DATA||'</div>');
-    sys.htp.p('<div class="no-data-found" style="display: none;">'||V_NO_DATA||'</div>');
+    sys.htp.p('<div class="map-data-'||l_region||'" style="display: none;">'||V_LOC_DATA||'</div>');
+    sys.htp.p('<div class="no-data-found-'||l_region||'" style="display: none;">'||V_NO_DATA||'</div>');
     
     RETURN l_result;
-END;
+    
+END RENDER_MAPMARKER;
